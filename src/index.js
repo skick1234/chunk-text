@@ -127,7 +127,7 @@ const chunkLength = (
 };
 
 const lastSpaceOrLength = (text, upTo) => {
-  let lastIndex = text.lastIndexOf(' ', upTo);
+  let lastIndex = text.lastIndexOf('\n', upTo);
   if (lastIndex === -1) {
     lastIndex = upTo;
   }
@@ -159,7 +159,7 @@ const chunkIndexOf = (
     splitAt = splitAt - 1;
   }
   splitAt = lastSpaceOrLength(characters, splitAt);
-  if ((splitAt > -2 && splitAt < 1) || characters[splitAt] === ' ') {
+  if ((splitAt > -2 && splitAt < 1) || characters[splitAt] === '\n') {
     splitAt = splitAt + 1;
   }
   if (
